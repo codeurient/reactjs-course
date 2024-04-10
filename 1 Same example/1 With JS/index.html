@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{ margin: 0; padding: 0; box-sizing: border-box;}
+        body{ 
+            padding-top: 5rem; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        ul {
+            list-style: none;
+        }
+        li {
+            padding: 1rem;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            transition: all 0.3s;
+        }
+        li:hover{
+            background-color: #eee;
+        }
+        li > .content {
+            display: none;
+        }
+        li.active {
+            background-color: rgb(255, 255, 91);
+        }
+        li.active > .content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul></ul>
+    
+    <script>
+        const content = [
+            {title: 'HTML', text: 'HyperText Markup Language or HTML is the standard markup language'},
+            {title: 'CSS',  text: 'Cascading Style Sheets is a style sheet language'},
+            {title: 'JS',   text: 'JS, is a programming language and core technology of the Web'}
+        ];
+
+        const container = document.querySelector('ul');
+
+        // 1) Bu funksiya UL tag-lerine elave edilecek kontenti ve html elementlerini RETURN edir.
+        // 2) parametr ITEM ise elde edilen kontentdir. 
+        function toHTML(item) {
+            return `
+                <li>
+                    <h3>${item.title}</h3>
+                    <div class="content">${item.text}</div>
+                </li>
+            `;
+        }
+        // console.log(toHTML(content[0]));
+
+
+        function renderContent() {
+        // 2) map() metodu CONTENT array-inin icinden 1,2 ve 3 cu obyekti goturerek verir toHTML funksiyasina.
+        // 3) toHTML funksiyasinin ITEM parametri hemin 1, 2 ve 3 cu obyktleri elde ederek, icinden 'title' ile 'text' xasselerini html elementlerine yerlesdirir. Bu proses her
+        // obyekt ucun ayri-ayri gerceklesir. Yəni, map metodu her obyekt ucun toHTML funksiyasini cagirir. 
+        // 4) En son olaraq map() metodu geriye netice olaraq array qaytarir. Hemin arrayin icinde ise toHTML funksiyasinin return etdiyi elementler olur.
+            // const html = content.map(toHTML)
+            // return html;
+
+        // 4) map() metodu array qaytardigi ucun JOIN() metodu ile bu array deyerlerini birlesdirerek STRING formatina cevirirk.  
+            // const html = content.map(toHTML).join()
+            // return html;
+
+
+        // 5) insertAdjacentElement() metodu ile UL tag-lerinin icerisine, elde etdiyimiz stringi yerlesdiririk.
+            const html = content.map(toHTML).join('')
+            container.insertAdjacentHTML('afterbegin', html);
+        }
+        renderContent()
+
+
+        // 6) querySelectorAll('li') ARRAY qaytarir. forEach() metodu bu array icinden her LI tag-ini ayrica elde edir. Sonra, REMOVE() metodu ile LI tag-lerinin CLASS atributunda olan 
+        // 'ACTIVE' deyerlerini silirik.
+        function removeActiveClasses() {
+            container.querySelectorAll('li').forEach( li => li.classList.remove('active') )
+        }
+
+        // 7) container UL tag-idir. 
+        container.addEventListener('click', event => {
+            // 8)  console.log(event):                UL tag-nin icinde LI ve H3 tag-leri vardir. Yəni, UL tag-ini klikledikde LI, H3 ve UL tag-leri ucun event elde edirik.
+            // 9)  console.log(event.target):         target ile tag-in ozunu elde edirik.
+            // 9)  console.log(event.target.tagName): tagName ile tag-in adini elde edirik (ancaq boyuk herfler ile). Meselen: LI. Buna gore toLowerCase ile kicik herf edirik.
+            // 10) event.target.closest(li):          Kliklenen eger UL tag-inin icinde ki, LI tag-idirse demisik.
+            if(event.target.tagName.toLowerCase() === 'li' || event.target.closest('li')?.tagName.toLowerCase() === 'li') {
+                // 11) Ilk once removeActiveClasses() butun LI tag-lerinden ACTIVE klas adini silirik.
+                removeActiveClasses();
+                // 12) Sonra ise tam deqiq kliklenen LI tag-ine ACTIVE klas adini elave edirik.
+                event.target.closest('li').classList.add('active');
+            }
+        })
+
+
+    </script>
+</body>
+</html>
