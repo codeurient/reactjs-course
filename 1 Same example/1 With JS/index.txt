@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <style>
         *{ margin: 0; padding: 0; box-sizing: border-box;}
         body{ 
@@ -39,29 +36,23 @@
 </head>
 <body>
     <ul></ul>
-    
     <script>
         const content = [
             {title: 'HTML', text: 'HyperText Markup Language or HTML is the standard markup language'},
             {title: 'CSS',  text: 'Cascading Style Sheets is a style sheet language'},
             {title: 'JS',   text: 'JS, is a programming language and core technology of the Web'}
         ];
-
         const container = document.querySelector('ul');
 
-        // 1) Bu funksiya UL tag-lerine elave edilecek kontenti ve html elementlerini RETURN edir.
-        // 2) parametr ITEM ise elde edilen kontentdir. 
+        // 1) Bu funksiya UL tag-lerine elave edilecek kontenti RETURN edir. Parametr ITEM ise konetinde elde edir. 
         function toHTML(item) {
             return `
                 <li>
                     <h3>${item.title}</h3>
                     <div class="content">${item.text}</div>
-                </li>
-            `;
-        }
-        // console.log(toHTML(content[0]));
-
-
+                </li>`;
+        }   // console.log(toHTML(content[0]));
+        
         function renderContent() {
         // 2) map() metodu CONTENT array-inin icinden 1,2 ve 3 cu obyekti goturerek verir toHTML funksiyasina.
         // 3) toHTML funksiyasinin ITEM parametri hemin 1, 2 ve 3 cu obyktleri elde ederek, icinden 'title' ile 'text' xasselerini html elementlerine yerlesdirir. Bu proses her
@@ -74,19 +65,15 @@
             // const html = content.map(toHTML).join()
             // return html;
 
-
         // 5) insertAdjacentElement() metodu ile UL tag-lerinin icerisine, elde etdiyimiz stringi yerlesdiririk.
             const html = content.map(toHTML).join('')
             container.insertAdjacentHTML('afterbegin', html);
         }
         renderContent()
 
-
         // 6) querySelectorAll('li') ARRAY qaytarir. forEach() metodu bu array icinden her LI tag-ini ayrica elde edir. Sonra, REMOVE() metodu ile LI tag-lerinin CLASS atributunda olan 
         // 'ACTIVE' deyerlerini silirik.
-        function removeActiveClasses() {
-            container.querySelectorAll('li').forEach( li => li.classList.remove('active') )
-        }
+        function removeActiveClasses() {    container.querySelectorAll('li').forEach( li => li.classList.remove('active') )    }
 
         // 7) container UL tag-idir. 
         container.addEventListener('click', event => {
@@ -101,8 +88,6 @@
                 event.target.closest('li').classList.add('active');
             }
         })
-
-
     </script>
 </body>
 </html>
