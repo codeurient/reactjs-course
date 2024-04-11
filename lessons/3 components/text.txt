@@ -1,0 +1,13 @@
+1) Web sayt birden cox hisseden ibaretdir. Sekilde de qeyd edildiyi kimi bir web sehifenin
+
+a) header
+b) footer
+c) logo
+d) navigation
+e) section ve.s kimi hisseleri olur.
+f) hetta web saytin her sehifeside componentdir demek olar...
+ 
+Bu hisselere, bu cur bolunmeye component-lerine ayirmaq deyirler.
+
+2) Web sayti componentlere ayiraraq, ferqli sehifelerde cagirmaq ve istifade etmek mumkundur. Bele olan halda bir componentde bas veren deyisiklik diger 
+sehifelere de tetbiq edilecekdir. 
