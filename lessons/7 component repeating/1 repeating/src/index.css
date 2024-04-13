@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #2596be;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    min-height: 60px;
+    border-bottom: 1px solid #000;
+    align-items: center;
+    padding: 20px 10px;
+    margin-bottom: 20px;
+}
+h3{
+    margin-left: 20px;
+}
+ul{
+    padding: 0 20px;
+    list-style-type: none;
+}
+li{
+    border: 2px solid black;
+    min-height: 80px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 5px;
+}

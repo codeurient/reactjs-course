@@ -1,3 +1,6 @@
+// 1) deyisken yaradiriq ve bu deyiskene ARRAY veririk. Sonra ise hemin array-i EXPORT edirik ki,
+// burda olan kontenti komponent icinde istifade edek.
+
 export const ways = [
     {
         title: 'Once upon a time, in the enchanting kingdom of Eldoria. ',

@@ -1,20 +1,29 @@
-// 1) App() adinda funksiya yaradiriq bu funksiya HTML tag-lerimizi RETURN edir.
-function App() {
+import Header from "./components/Header";
+import WayToTeach from "./components/WayToTeach";
+import Button from "./components/Button";
+import { ways } from "./data";
+
+export default function App() {
   return (
-
     <div>
-      <h1>Hello React!</h1>
-    </div>
+      <Header/>
 
+      <main>
+        <section>
+          <h3>Lorem ipsum dolor sit.</h3>
+
+          <ul>
+            {ways.map((way, index) => (
+              <WayToTeach key={index} {...way} />
+            ))}
+          </ul>
+        </section>
+
+        <section>
+          <h3>Moved by Elara's selfless act of kindness</h3>
+          <Button/>
+        </section>
+      </main>
+    </div>
   )
 }
-
-// 2) App() funksiyasini istifade ede bilmeyimiz ucun EXPORT etmeliyik. APP() evezine istediyimiz adi yazmaq olar.
-export default App
-
-// 3) Burdan hansi ad ile export etmeyimizin bir onemi yoxdur. Cunki MAIN.JSX faylinin icine APP.JSX faylini IMPORT 
-// edeceyik. IMPORT etdikde yazdigimiz ad APP.JSX -dan export etdiyimiz kodlari hansi ad ile elde edeceyimizi bildirir.
-
-// Meselen: import App from './App.jsx' 
-
-// Demeli APP adı ilə İMPORT edirik. Burda da App əvəzinə istədiyimiz ad ilə İMPORT etmək olar.
