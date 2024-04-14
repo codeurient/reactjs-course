@@ -14,6 +14,7 @@ export const ways = [
 ]
 
 
+// 1) 'differences' adinda obyekt yaradiriq. Bu obyektin deyerlerini App.jsx faylinda olan handleClick() funksiyasina parametr kimi vereceyik.
 export const differences = {
     way: 'Guided by the stag, whose strength and wisdom proved invaluable, Elara ventured deep into the heart of the frozen wilderness where Morganas fortress loomed like a specter against the wintry sky. ',
     easy:'But Morgana power was great, and her icy spells threatened to overwhelm Elara. In her darkest hour, as hope flickered like a dying ember, Elara called upon the empathy that defined her being. ',

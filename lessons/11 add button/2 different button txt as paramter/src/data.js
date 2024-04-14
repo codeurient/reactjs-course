@@ -12,10 +12,3 @@ export const ways = [
         description: 'And so, with the stag at her side and the love of her people in her heart, Elara returned home, where she was hailed as a hero and beloved throughout the kingdom. But amidst the celebrations, she remained ever humble, for she knew that true magic lay not in spells or incantations, but in the boundless capacity of the human heart to love and to heal.'
     },
 ]
-
-
-export const differences = {
-    way: 'Guided by the stag, whose strength and wisdom proved invaluable, Elara ventured deep into the heart of the frozen wilderness where Morganas fortress loomed like a specter against the wintry sky. ',
-    easy:'But Morgana power was great, and her icy spells threatened to overwhelm Elara. In her darkest hour, as hope flickered like a dying ember, Elara called upon the empathy that defined her being. ',
-    program: 'Moved by Elara selfless act of kindness, Morgana heart thawed, and the spell of winter was broken. As the sun emerged from behind the clouds, bathing the land in its golden light once more'
-}
