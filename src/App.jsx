@@ -1,40 +1,33 @@
-import Header from "./components/Header";
-import WayToTeach from "./components/WayToTeach";
-import Button from "./components/Button/Button";
-import { useState } from 'react';
-import { ways } from "./data";
+import Header from "./components/Header/Header";
+import TeachingSection from "./components/TeachingSection";
+import DifferencesSection from "./components/DifferencesSection";
+import IntroSection from "./components/IntroSection";
+import TabsSection from "./components/TabsSection";
+import FeedbackSection from "./components/FeedbackSection";
+import { useState } from "react";
 
 export default function App() {
-  let content = "Click the button";  
-
-  function handleClick(type) {
-    console.log("button clicked", type);
-    content = type;  
-  }
-
+  const [tab, setTab] = useState('feedback');
+  
   return (
-    <div>
+    <>
       <Header/>
+
       <main>
-        <section>
-          <h3>Lorem ipsum dolor sit.</h3>
-          <ul>
-            {ways.map((way, index) => (
-              <WayToTeach key={index} {...way} />
-            ))}
-          </ul>
-        </section>
+        <IntroSection/>
 
-        <section>
-          <h3>Moved by Elara's selfless act of kindness</h3>
-          <Button onClick={ () => handleClick('way') }>Home</Button>
-          <Button onClick={ () => handleClick('easy') }>Blog</Button>
-          <Button onClick={ () => handleClick('program') }>About</Button>
+        <TabsSection active={tab} onChange={ (current) => setTab(current) }/>
 
-          <p>{content}</p>
-          
-        </section>
+        { tab === 'main' && (
+          <>
+            <TeachingSection/>
+            <DifferencesSection/>
+          </>
+        )}
+
+        { tab === 'feedback' && <FeedbackSection/>}
+
       </main>
-    </div>
+    </>
   )
 }
