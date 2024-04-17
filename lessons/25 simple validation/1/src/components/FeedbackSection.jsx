@@ -2,26 +2,25 @@ import { useState } from "react";
 import Button from "./Button/Button";
 
 export default function FeedbackSection() {
+
   const [name, setName] = useState('')
-  const [reason, setReason] = useState('help')  
-  const [hasError, setHasError] = useState(false)
+  const [reason, setReason] = useState('help')
 
   function handleNameChange(event) {
     setName(event.target.value);
-    setHasError(event.target.value.trim().length === 0);
   }
 
-  
   return (
     <section>
         <h3>Feedback Section</h3>
 
-        <div>{hasError}</div>
-
 
         <form>
           <label htmlFor="name">Your name</label>
-          <input type="text" id="name" className="control" value={name} onChange={handleNameChange} style={{ border: hasError ? '1px solid red' : null}}/>
+          {/* 1) Eger 'NAME' deyiskeninin LENGTH-i olarsa yəni NAME deyiskeni icinde bir seyler olarsa STYLE NULL olaraq teyin edilsin, eks halda bu deyerler verilsin: '1px solid red'  */}
+          <input type="text" id="name" className="control" value={name} onChange={handleNameChange} style={{ border: name.trim().length ? null : '1px solid red'}}/>
+
+          {/* 2) Ama bu tamda dogru yanasma deyil cunki daxil olan kimi qirmizi reng goreceyik. */}
 
           <label htmlFor="reason">Reason of feedback</label>
           <select id="reason" className="control" onChange={(event) => setReason(event.target.value)}>
@@ -29,10 +28,9 @@ export default function FeedbackSection() {
             <option value="help">Need help</option>
             <option value="suggest">Suggestion</option>
           </select>
-
         </form>
 
-        <Button disabled={hasError}>Send</Button>
+        <Button>Send</Button>
     </section>
   )
 }

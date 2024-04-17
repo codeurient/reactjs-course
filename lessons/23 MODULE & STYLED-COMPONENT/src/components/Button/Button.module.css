@@ -1,0 +1,28 @@
+.button {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.button:hover{
+    opacity: 0.8;
+}
+
+.button.active {
+    background: #3e6ae1;
+    color: #fff;
+}
+
+/* 
+
+    1) Ilk once Button.css faylinin adini bu cur deyisirik: Button.module.css
+
+    2) Sonra ise bu fayli 'classes' adi ile Button.jsx faylinda import edeceyik.  classes evezine istediyimiz ad yazmaq olar.
+
+    3) Bunu ona gore edirik ki, Button-a aid olan css stiller hemin Button-inin istifade edildiyi komponent icinde əl çatan olsun.
+
+*/
