@@ -1,11 +1,16 @@
+// 1) Bunun ucun 'useRef' adli hook IMPORT edirik. 
 import { useState, useRef } from "react";
 import Button from "./Button/Button";
 
 function StateVsRef() {
   const tagIinput = useRef(); 
+  // 2) Burdan useState()-de sildik ve useRef() hook-unu cagirdiq ki, istifade edek asagida.
   const [show, setShow] = useState(false)  
 
   function handleKeyDown(event) {
+    // 5) Asagida ki, ref={tagIinput} silindikde NULL qayidacaq, silinmedikde ise INPUT tag-ine daxil edilen deyer qayidacaq.    Bu sadece bir defe ENTER basdiqda isleyecek
+    console.log(tagIinput);
+
     if(event.key === 'Enter'){
       setShow(true);
     }
@@ -13,7 +18,10 @@ function StateVsRef() {
 
   return (
     <div>
+      {/* 4) 'tagInput.current' nedir? Asagidaki INPUT tag-idir. 'tagIinput.current.value' yazaraqda hemin INPUT-a daxil edilen deyeri elde edirik. Nece olur ki, INPUT tag-ine daxil edilen DEYER-i elde edirik ?
+      Cunki, useRef() hook-unu REF parametrine vererek INPUT tag-i ile useRef() hook-u arasinda LINK yəni elaqe yaratmisiq. */}
       <h3>Input Value: {show && tagIinput.current.value}</h3>
+      {/* 3) 'value' ve 'setValue' ucun istifade etdiyimiz onChange ve value parametrlerinide silirik. REF adinda xususi bir parametr elave edirik. */}
       <input type="text" className="control" onKeyDown={handleKeyDown} ref={tagIinput}/>
     </div>
   )

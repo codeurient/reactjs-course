@@ -1,20 +1,16 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import Button from "./Button/Button";
 
 function StateVsRef() {
-  const tagIinput = useRef(); 
-  const [show, setShow] = useState(false)  
+  const [value, setValue] = useState('')
+  const [show, setShow] = useState(false)  // 1) Bunun ucun basqa bir state daha yaza bilerik.
 
-  function handleKeyDown(event) {
-    if(event.key === 'Enter'){
-      setShow(true);
-    }
-  }
+  function handleKeyDown(event) {    if(event.key === 'Enter'){   setShow(true);  }    }
 
   return (
     <div>
-      <h3>Input Value: {show && tagIinput.current.value}</h3>
-      <input type="text" className="control" onKeyDown={handleKeyDown} ref={tagIinput}/>
+      <h3>Input Value: {show && value}</h3>
+      <input type="text" className="control" value={value} onChange={(e) => setValue(e.target.value)} onKeyDown={handleKeyDown}/>
     </div>
   )
 }
@@ -51,6 +47,7 @@ export default function FeedbackSection() {
           <Button disabled={form.hasError} isActive={!form.hasError}>Send</Button>
         </form>
 
+        {/* 2) INDI entere basdiqda elave edilecek ancaq bir defe sonra yene deyer elave etdikde baslayacaq ekranda entere basmadan gosterilmeye. Bunun ucunde basqa bir state yazmaq olar ancaq bu cixis yolu deyildir ve uzundur. */}
         <StateVsRef/>
     </section>
   )

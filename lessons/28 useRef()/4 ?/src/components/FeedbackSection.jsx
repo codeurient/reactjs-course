@@ -13,6 +13,15 @@ function StateVsRef() {
 
   return (
     <div>
+      {/* 
+          1) Birincide ki kimi yazdiqda ERROR aliriq. Cunki biz heleki INPUT tag-ine deyer elave etmemisik. Deyer elave etmedikde {tagIinput.current.value} bu kod bize UNDEFINED qaytarir ve mentiqnen UNDEFINED.value demis oluruq.
+          Olmuyan bir seyin deyerini cagirmaga calismaq xeta mesaji verir. Bele bir xeta olmasin deye ? SUAL simvolundan istifade etmeliyik. Yəni sual qoymaq o demekdir ki, eger varsa isle yoxdursa hecne etme.
+      */}
+
+      {/* <h1>{tagIinput.current.value}</h1> */}
+      {/* <h1>{tagIinput.current?.value}</h1> */}
+      
+
       <h3>Input Value: {show && tagIinput.current.value}</h3>
       <input type="text" className="control" onKeyDown={handleKeyDown} ref={tagIinput}/>
     </div>

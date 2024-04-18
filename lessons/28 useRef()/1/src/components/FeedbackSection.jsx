@@ -1,20 +1,13 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import Button from "./Button/Button";
 
+// 1) INPUT sahesine deyer yazdiqda avtomatik olara hemin deyer ekranda eks olunur ancaq nece ede bilerik ki, yazi ENTER duymesini basdiqda gosterilsin ? 
 function StateVsRef() {
-  const tagIinput = useRef(); 
-  const [show, setShow] = useState(false)  
-
-  function handleKeyDown(event) {
-    if(event.key === 'Enter'){
-      setShow(true);
-    }
-  }
-
+  const [value, setValue] = useState('')
   return (
     <div>
-      <h3>Input Value: {show && tagIinput.current.value}</h3>
-      <input type="text" className="control" onKeyDown={handleKeyDown} ref={tagIinput}/>
+      <h3>Input Value: {value}</h3>
+      <input type="text" className="control" value={value} onChange={(e) => setValue(e.target.value)}/>
     </div>
   )
 }
@@ -33,6 +26,7 @@ export default function FeedbackSection() {
       hasError: event.target.value.trim().length === 0,
     }))
   }
+
 
   return (
     <section>
