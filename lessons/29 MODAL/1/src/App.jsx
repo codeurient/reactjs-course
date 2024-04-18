@@ -4,10 +4,12 @@ import DifferencesSection from "./components/DifferencesSection";
 import IntroSection from "./components/IntroSection";
 import TabsSection from "./components/TabsSection";
 import FeedbackSection from "./components/FeedbackSection";
+// 1
 import EffectSection from "./components/EffectSection";
 import { useState } from "react";
 
 export default function App() {
+  // 2
   const [tab, setTab] = useState('effect');
   
   return (
@@ -28,6 +30,7 @@ export default function App() {
 
         { tab === 'feedback' && <FeedbackSection/>}
 
+        {/* 3 */}
         { tab === 'effect' && <EffectSection/>}
 
       </main>

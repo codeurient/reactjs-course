@@ -7,6 +7,7 @@ export default function TabsSection({ active, onChange }) {
 
         <Button isActive={active === 'main'}      onClick={() => onChange('main')}      >Home</Button>
         <Button isActive={active === 'feedback'}  onClick={() => onChange('feedback')}  >Feedback</Button>
+        {/* 1 */}
         <Button isActive={active === 'effect'}    onClick={() => onChange('effect')}    >Effect</Button>
         
     </section>
