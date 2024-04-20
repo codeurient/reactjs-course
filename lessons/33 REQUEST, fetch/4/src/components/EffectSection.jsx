@@ -1,29 +1,27 @@
 import Button from "./Button/Button";
 import Modal from "./Modal/Modal";
-import {useEffect, useState, useCallback} from "react";
-import  useInput  from "../Hooks/useInput";
+import {useEffect, useState} from "react";
 
 export default function EffectSection() {
-    const customInput = useInput()
-
     const [modal, setModal] = useState(false);
     const [loading, setLoading] = useState(false);
     const [users, setUsers] = useState([]);
 
-    const fetchUsers = useCallback( async () => {
-        setLoading(true);  
-        const response = await fetch('https://jsonplaceholder.typicode.com/users'); 
-        const users  = await response.json();  
-        setUsers(users) 
-        setLoading(false); 
-    }, [])
-
     useEffect(() => {
+        // 1) Birinci qayda olara fetchUsers() funksiyasini useEffect() hook-unun icine qoya bilerik.
+        async function fetchUsers() {
+            setLoading(true);  
+            const response = await fetch('https://jsonplaceholder.typicode.com/users'); 
+            const users  = await response.json();  
+            setUsers(users) 
+            setLoading(false);  
+        }
+
         fetchUsers();
-    }, [fetchUsers])
+    }, [])
+    
 
     return (
-
         <section>
             <h3>effect</h3>
 
@@ -38,15 +36,7 @@ export default function EffectSection() {
 
             {loading && <p>Loading...</p>}
 
-            {!loading && 
-                ( 
-                    <>
-                        <input type="text" className="control" {...customInput}/>
-                        {/* 1) users Array-ini, INCLUDE olan deyere gore FILTER et. */}
-                        <ul>  {  users.filter((user) => user.name.toLowerCase().includes(customInput.value.toLowerCase())).map((user) => (<li key={user.id}>{user.name}</li>))  } </ul>
-                    </>
-                )
-            }
+            {!loading &&  <ul>  {  users.map((user) => (<li key={user.id}>{user.name}</li>))  } </ul> }
         </section>
     )
 }

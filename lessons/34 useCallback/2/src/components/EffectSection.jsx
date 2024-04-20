@@ -1,11 +1,8 @@
 import Button from "./Button/Button";
 import Modal from "./Modal/Modal";
 import {useEffect, useState, useCallback} from "react";
-import  useInput  from "../Hooks/useInput";
 
 export default function EffectSection() {
-    const customInput = useInput()
-
     const [modal, setModal] = useState(false);
     const [loading, setLoading] = useState(false);
     const [users, setUsers] = useState([]);
@@ -20,10 +17,13 @@ export default function EffectSection() {
 
     useEffect(() => {
         fetchUsers();
+        // 1) Kvadrat morterize icinde funkisyani yeniden cagirmaq o menaya gelir ki, eger birden fetchUsers() funksiyasinda her hansisa bir deyisiklik olarsa useEffect() hook-u yeniden cagrilsin
+        // ve fetchUsers() tekrar istifade edile bilsin hemin yeniliklernen birlikde. Hal-hazirda hec bir deyisiklik yoxdur onun ucun hele bele yazmis sayiliriq. Ama olma ehtimalini nezere alaraq 
+        // yazmaq praktikada yaxsi qebul olunan bir qaydadir.
     }, [fetchUsers])
 
-    return (
 
+    return (
         <section>
             <h3>effect</h3>
 
@@ -38,15 +38,7 @@ export default function EffectSection() {
 
             {loading && <p>Loading...</p>}
 
-            {!loading && 
-                ( 
-                    <>
-                        <input type="text" className="control" {...customInput}/>
-                        {/* 1) users Array-ini, INCLUDE olan deyere gore FILTER et. */}
-                        <ul>  {  users.filter((user) => user.name.toLowerCase().includes(customInput.value.toLowerCase())).map((user) => (<li key={user.id}>{user.name}</li>))  } </ul>
-                    </>
-                )
-            }
+            {!loading &&  <ul>  {  users.map((user) => (<li key={user.id}>{user.name}</li>))  } </ul> }
         </section>
     )
 }

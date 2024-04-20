@@ -8,11 +8,19 @@ import EffectSection from "./components/EffectSection";
 import { useState } from "react";
 
 export default function App() {
+  // 1) Test meqsedli headeri gizledek. 
+  const [visible, setVisible] = useState(true);
   const [tab, setTab] = useState('effect');
 
+  // 2) 3 saniye sonra gizlenecek header
+  setTimeout(() => {
+    setVisible(false);
+  }, 3000)
+  
   return (
     <>
-      <Header/>
+    {/* 3) Header gizlendikde bir EFFECT bas verir. Yeni bir hereket bas verir. Bu hereketi, effect-i alqilamaq ucun 'useEffect' hook-undan istifade edirik. */}
+      {visible && <Header/>}
 
       <main>
         <IntroSection/>

@@ -19,4 +19,3 @@ export const differences = {
     easy:'But Morgana power was great, and her icy spells threatened to overwhelm Elara. In her darkest hour, as hope flickered like a dying ember, Elara called upon the empathy that defined her being. ',
     program: 'Moved by Elara selfless act of kindness, Morgana heart thawed, and the spell of winter was broken. As the sun emerged from behind the clouds, bathing the land in its golden light once more'
 }
-
