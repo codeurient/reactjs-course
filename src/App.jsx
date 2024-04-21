@@ -1,36 +1,18 @@
-import Header from "./components/Header/Header";
-import TeachingSection from "./components/TeachingSection";
-import DifferencesSection from "./components/DifferencesSection";
-import IntroSection from "./components/IntroSection";
-import TabsSection from "./components/TabsSection";
-import FeedbackSection from "./components/FeedbackSection";
-import EffectSection from "./components/EffectSection";
-import { useState } from "react";
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addCash, getCash } from './store/favorites/favorites.slice';
 
 export default function App() {
-  const [tab, setTab] = useState('effect');
+  const dispatch = useDispatch();
+  const cash = useSelector(state => state.cash.value);
 
   return (
-    <>
-      <Header/>
-
-      <main>
-        <IntroSection/>
-
-        <TabsSection active={tab} onChange={ (current) => setTab(current) }/>
-
-        { tab === 'main' && (
-          <>
-            <TeachingSection/>
-            <DifferencesSection/>
-          </>
-        )}
-
-        { tab === 'feedback' && <FeedbackSection/>}
-
-        { tab === 'effect' && <EffectSection/>}
-
-      </main>
-    </>
-  )
+    <div>
+      <div>{cash}</div>
+      <div>
+        <button onClick={() => dispatch(addCash(5))}>Add money</button>
+        <button onClick={() => dispatch(getCash(5))}>Get money</button>
+      </div>
+    </div>
+  );
 }
