@@ -1,35 +1,23 @@
 import { useDispatch, useSelector } from "react-redux";
 import { decrement, increment } from "./redux/features/counter/counterSlice";
-import { useEffect } from "react";
-import { getCountry } from "./redux/features/country/countrySlice";
+
 
 export default function App() {
 
   const dispatch = useDispatch();
 
   const {counterStart} = useSelector(state => state.counters); 
-  const {countryArray, loading} = useSelector(state => state.countries); 
+  // 1) useSelector() funksiyasi ile store-dan STATE-leri elde edirik.
+  const {countryArray} = useSelector(state => state.countries); 
 
-  useEffect(() => {
-    dispatch(getCountry())
-  }, [])
+  // Ekrana data-lari yazdirmaga calisiriq ancaq gedib baxsaq gorerik ki bos array qayidir.
+  console.log(countryArray);
 
   return (
     <div>
       <span onClick={ () => dispatch(decrement()) }>   -   </span>
       <span>{counterStart}</span>
       <span onClick={ () => dispatch(increment()) }>   +   </span>
-
-      {loading && <p>Loading...</p>}
-
-      {!loading && (
-        <ul>
-          {countryArray.map((country) => (
-            <li key={country.name.common}>{country.name.common}</li>
-          ))}
-        </ul>
-      )}
-
     </div>
   );
   
