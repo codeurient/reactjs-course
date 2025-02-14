@@ -11,7 +11,7 @@ export default function FeedbackSection() {
 
   function handleNameChange(event) { // 1) => oxdan sonra yazilan yumru morterizeler qrup yaratmaq ucundur. 
     setForm((prev) => ({
-      // 2) setForm() funksiyasinin icinde callback yaratmisiq. Callback-in PREV adli parametri yxuaridaki FORM variable-inda olan obeykti elde edir. Bu obyektin icinde var:   {name: '',   hasError: true,   reason: 'help'}
+      // 2) setForm() funksiyasinin icinde callback yaratmisiq. Callback-in PREV adli parametri yuxaridaki FORM variable-inda olan obeykti elde edir. Bu obyektin icinde var:   {name: '',   hasError: true,   reason: 'help'}
       // => oxdan sonra yazdigimiz 'name' ve 'hasError', setForm() funksiyasinin qebul etdiyi yeni deyerlerdir. Bu cur yazdiqda seForm() funksiyasi hem ...prev (reason) hemde yeni deyerleri yazdiracaq FORM icine. Artiq 
       // INPUT tag-ine deyer daxil etdikde REASON itmeyecek.
       ... prev, 

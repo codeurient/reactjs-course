@@ -36,9 +36,9 @@ export default function FeedbackSection() {
 
         {/* 1) Daha deqiq gormek ucun deyisikliyi form obyektini JSON formatina ceivirb baxaq. FORM obyektinin acarlarini elde edirik keys() metodu ile. KEYS() array qaytarir. MAP() metodu 
         hemin ARRAY icinden tek-tek butun acarlari elde edir. Sonra ise 'FORM[KEY]' yazaraq deyerleri cagirirq */}
-        {/* <pre>
+        { <pre>
           {Object.keys(form).map(   (key) => (<div> {key}: {form[key]} </div>)   )}
-        </pre> */}
+        </pre> }
 
         {/* 3) Daha qisa bele yazmaq olar: */}
         <pre>

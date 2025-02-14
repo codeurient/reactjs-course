@@ -1,2 +1,0 @@
-36ci derse qeder butun melumatlar local formada saxlanilirdi ve bir melumati en ust component-den en alt component-e gondermek ucun diger ortada olan butun component-lerden kecmek 
-lazim idi. REDUX ise data-lari global sekilde STORE deyilen bir bazada saxlayaraq istenilen component-e bilavasite gondermek ucun istifade edilir.

@@ -36,6 +36,7 @@
 </head>
 <body>
     <ul></ul>
+
     <script>
         const content = [
             {title: 'HTML', text: 'HyperText Markup Language or HTML is the standard markup language'},
@@ -43,6 +44,9 @@
             {title: 'JS',   text: 'JS, is a programming language and core technology of the Web'}
         ];
         const container = document.querySelector('ul');
+
+        console.log(container.nodeName);
+        
 
         // 1) Bu funksiya UL tag-lerini RETURN edir. Parametr ITEM ise hemin TAG-lerin icinde yazilacaq kontenti elde edir.
         function toHTML(item) {
@@ -67,6 +71,9 @@
 
         // 5) insertAdjacentElement() metodu ile UL tag-lerinin icerisine, elde etdiyimiz stringi yerlesdiririk.
             const html = content.map(toHTML).join('')
+
+            console.log(html);
+            
             container.insertAdjacentHTML('afterbegin', html);
         }
         renderContent()

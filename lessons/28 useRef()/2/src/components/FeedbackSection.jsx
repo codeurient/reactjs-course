@@ -47,7 +47,7 @@ export default function FeedbackSection() {
           <Button disabled={form.hasError} isActive={!form.hasError}>Send</Button>
         </form>
 
-        {/* 2) INDI entere basdiqda elave edilecek ancaq bir defe sonra yene deyer elave etdikde baslayacaq ekranda entere basmadan gosterilmeye. Bunun ucunde basqa bir state yazmaq olar ancaq bu cixis yolu deyildir ve uzundur. */}
+        {/* 2) INDI entere basdiqda elave edilecek ancaq bir defe sonra yeni deyer elave etdikde baslayacaq ekranda entere basmadan gosterilmeye. Bunun ucunde basqa bir state yazmaq olar ancaq bu cixis yolu deyildir ve uzundur. */}
         <StateVsRef/>
     </section>
   )

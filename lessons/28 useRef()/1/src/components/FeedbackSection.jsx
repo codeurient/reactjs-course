@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "./Button/Button";
 
-// 1) INPUT sahesine deyer yazdiqda avtomatik olara hemin deyer ekranda eks olunur ancaq nece ede bilerik ki, yazi ENTER duymesini basdiqda gosterilsin ? 
+// 1) INPUT sahesine deyer yazdiqda avtomatik olaraq hemin deyer ekranda eks olunur ancaq nece ede bilerik ki, yazi ENTER duymesini basdiqda gosterilsin ? 
 function StateVsRef() {
   const [value, setValue] = useState('')
   return (

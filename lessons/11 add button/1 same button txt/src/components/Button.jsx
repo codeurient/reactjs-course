@@ -1,4 +1,4 @@
-// 5) INDEX.CSS faylinda olan siteller umumidir. Ancaq isteye uygun olaraq CSS stillerini izolyasiya ede bilerik. Yəni, duyme ucun ayrica css fayli yaradaraq ona aid stilleri
+// 5) INDEX.CSS faylinda olan stiller umumidir. Ancaq isteye uygun olaraq CSS stillerini izolyasiya ede bilerik. Yəni, duyme ucun ayrica css fayli yaradaraq ona aid stilleri
 // hemin faylda yerlesdirmek olar. Sonra ise hemin componentin oldugu fayli css faylini IMPORT etmeliyik.
 import './Button/Button.css'
 

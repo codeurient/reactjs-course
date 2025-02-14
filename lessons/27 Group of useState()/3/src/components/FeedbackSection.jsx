@@ -16,7 +16,7 @@ export default function FeedbackSection() {
       hasError: event.target.value.trim().length === 0,
       /// 3) FORM variable-i icinde 'name', 'hasError', 'reason' var ve biz FORM.REASON yazaraq REASON xassesinde olan deyeri handleNameChange() funksiyasinda olan REASON-a veririk.
       reason: form.reason
-      // 4) Niye INPUT tag-i ile elaqeli bir event funksiyasina select tag-i ile bagli xasseni elave etmisik? Cunki eger burda REASON yazmasaydiq, INPIT tag-ine deyer elave etdikde REASON silinecekdi ve 
+      // 4) Niye INPUT tag-i ile elaqeli bir event funksiyasina select tag-i ile bagli xasseni elave etmisik? Cunki eger burda REASON yazmasaydiq, INPUT tag-ine deyer elave etdikde REASON silinecekdi ve 
       // setForm() butun deyisiklikleri FORM variable-ina gondermeyecekdi. Sadece 'name' ve 'hasError' gedecekdi.
     })
   }
