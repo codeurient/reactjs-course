@@ -9,6 +9,8 @@ export const fetchPokemonByName = createAsyncThunk(
     'pokemon/fetchByName',
     async (name, { rejectWithValue }) => {
       const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
+      console.log(response);
+      
       const data = await response.json()
       if (response.status < 200 || response.status >= 300) {
         return rejectWithValue(data)
@@ -32,7 +34,7 @@ export const counterSlice = createSlice({
     },
   },
 
-  // 3) Birde VERILENLERIN idare edilmesi vardir hansi ki bunu ucunde diger derse gorduyumuz, 'createAsyncThunk' ve 'extraReducers' istifade edildi.
+  // 3) Birde VERILENLERIN idare edilmesi vardir hansi ki bunun ucunde diger derse gorduyumuz, 'createAsyncThunk' ve 'extraReducers' istifade edildi.
   extraReducers: (builder) => {
     // 4) DATA-lar yuklenene qeder islesin demek ucun 'pending' elave edirik
     builder.addCase(fetchPokemonByName.pending, (state, action) => {

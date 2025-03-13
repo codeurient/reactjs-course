@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
 // NOT: Mutleq App deye import etmek lazim deyil sadece bas herfi boyuk yazmaq vacibdir.. App.jsx faylindan export edilen component-i App deyerek import edirik ve ANA component olan ROOT-a (index.html) gonderirik.
 import App from './App.jsx'
-import './index.css'
 import { configureStore } from '@reduxjs/toolkit'
 
 // 1) STATE - defaultState adinda oz obyektimizi yaradaraq ve CASH adli xassesine 0 deyerini veririk. Bu bizim STATE-imizdir. STATE - component icinde ilkin olaraq gosterilen data-lardir. Baslangic seviyye. 
@@ -14,7 +13,9 @@ const defaultState = {
 
 // 2) STATE-leri deyisdirmek ucun REDUCER-lardan istifade edilir. ACTION-lar ile deye bilerik ki, ne bas verdikde STATE deyissin. ACTION-lari REDUCER-lara gondermek ucun DISPATCH-lardan istifade edilir.
 const reducer = (state = defaultState, action) => {
-// 3) REDUCER-lar ise bildiyimiz normal funksiyalardir. 2 parametr qebul edir. 1ci parametr STATE component-de olan baslangic seviyyeni gosterir. 2ci parametr ACTION ise ACTION obyektin ile gonderdiyimiz 
+
+    
+// 3) REDUCER-lar ise bildiyimiz normal funksiyalardir. 2 parametr qebul edir. 1ci parametr STATE component-de olan baslangic seviyyeni gosterir. 2ci parametr ACTION ise ACTION obyekti ile gonderdiyimiz 
 // obyektdir. Bu obyekt icinde TYPE xassesi qeyd edilir. Bu xassenin deyerinden asili olaraq REDUCER funksiyasi STATE-i deyisdirecekdir. 
     switch (action.type) {
 

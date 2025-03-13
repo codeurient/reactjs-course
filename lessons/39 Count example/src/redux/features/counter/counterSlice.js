@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-
 // 1) State yaradiriq
 const initialState = {
     counterStart: 0,
 }
+
 // 2) counterSlice adinda SLICE yaradiriq. Istediyimiz adi vere bilerik.
 export const counterSlice = createSlice({
 
@@ -22,13 +22,10 @@ export const counterSlice = createSlice({
         increment : (state) => {
             state.counterStart += 1
         },
-        // 6) Burda da hemcinin. Elave olaraq ACTION qeyd etmisik. DISPATCH etdikde hemin action avtomatik olaraq gonderilen deyeri qebul edecek. 
-        incrementCustom : (state, action) => {
-            state.counterStart += action.payload
-        }
+  
     }
 
 })
 
-export const {decrement, increment, incrementCustom} = counterSlice.actions
+export const {decrement, increment } = counterSlice.actions
 export default counterSlice.reducer

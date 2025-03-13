@@ -1,0 +1,29 @@
+Mövcud React layihədə 'Zustand' istifadə edərək sadə bir counter (sayğac) funksiyası əlavə etmək 
+üçün aşağıdakı addımları yerinə yetirmək lazımdır:
+
+
+1. Zustand quraşdırılması:  npm install zustand     - Şəkil 1
+
+
+
+
+
+
+
+2. State-i idarə etmək üçün 'src' qovluğunun içində 'useStore.js' adında fayl yaradırıq. Şəkil 2, Şəkil 3
+
+
+
+
+
+
+
+3. Sonra 'Counter.jsx' adlı komponent yaratdırıq:   Şəkil 4,   Şəkil 5
+
+
+
+
+
+
+
+4. 'App.jsx' faylında Counter komponentini istifadə edirik:    Şəkil 6,   Şəkil 7     

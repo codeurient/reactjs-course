@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { decrement, increment } from "./redux/features/counter/counterSlice";
 
 
+
+
+
 export default function App() {
 
   // 2) useDispatch yaradiriq

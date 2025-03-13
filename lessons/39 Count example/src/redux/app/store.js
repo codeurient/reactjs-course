@@ -8,7 +8,7 @@ export const store = configureStore({
 
     reducer: {
         // 2) 'counters' bu ad ile componentde state-leri elde edirik.
-        counters: counterReducer
+        counters: counterReducer,
     }
 
 })

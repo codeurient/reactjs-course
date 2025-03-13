@@ -12,7 +12,7 @@ export const jsonPlaceHolderApi = createApi({
   reducerPath: 'jsonPlaceHolder',
 
 // 3) fetchBaseQuery() metodu ile sorgu gondererek data-lari cagiririq.
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://jsonplaceholder.org' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://jsonplaceholder.typicode.com' }),
 
 // 4) endpoints ile API-nin uc noqtelerini teyin edirik. Yəni baseQuery-nin devamidir. 
   endpoints: (builder) => ({

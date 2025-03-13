@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 export const jsonPlaceHolderApi = createApi({
   reducerPath: 'jsonPlaceHolder',
 
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://jsonplaceholder.org' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://jsonplaceholder.typicode.com' }),
 
   endpoints: (builder) => ({
     getPostById: builder.query({
