@@ -35,7 +35,11 @@
     </style>
 </head>
 <body>
+
+
     <ul></ul>
+
+
 
     <script>
         const content = [
@@ -80,7 +84,11 @@
 
         // 6) querySelectorAll('li') ARRAY qaytarir. forEach() metodu bu array icinden her LI tag-ini ayrica elde edir. Sonra, REMOVE() metodu ile LI tag-lerinin CLASS atributunda olan 
         // 'ACTIVE' deyerlerini silirik.
-        function removeActiveClasses() {    container.querySelectorAll('li').forEach( li => li.classList.remove('active') )    }
+        function removeActiveClasses() {    
+            
+            container.querySelectorAll('li').forEach( li => li.classList.remove('active') )    
+        
+        }
 
         // 7) container UL tag-idir. 
         container.addEventListener('click', event => {

@@ -1,7 +1,7 @@
 <!-- 
 
     1) Ilk once NODE js endirmek lazimdir:                           https://nodejs.org/en
-    2) Sonra terminalвф bu kamandani yazaraq react-i endirmek olar:  https://create-react-app.dev/   -  npx create-react-app my-app
+    2) Sonra terminalda bu kamandani yazaraq react-i endirmek olar:  https://create-react-app.dev/   -  npx create-react-app my-app
 
     3) Eger qeyd edilen qovluqda deyilikse onda bu kamanda ile react endirilen qovluqa kecmek lazimdir:             cd react-js-course
     4) Qovluqa kecid etdikden sonra bu kamandani yazaraq proyekti ayaga qaldiririq (sudo yazmaq gereke biler):      npm start
